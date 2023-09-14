@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title align="center" width="80">Tabela de Preços</title>
+</head>
+<body>
+    <h1 align="center">Lista de Compras</h1>
+    <table align="center" border="1" width="900">
+        <thead>
+            <tr>
+                <th width="400" >Item</th>
+                <th>Preço Unitário (R$)</th>
+                <th>Quantidade</th>
+                <th>Total (R$)</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <tr bgcolor="green">
+                    
+                <td >Pão</td>
+                <td ><input type="number" id="precoPao" step="0.01" value="2.00" onchange="calcularTotal()"></td>
+                <td><input type="number" id="quantidadePao" value="1" onchange="calcularTotal()"></td>
+                <td><span id="totalPao">2.00</span></td>
+                </tr>
+            </tr>
+            <tr>
+                <tr bgcolor="green">
+                <td>Leite</td>
+                <td><input type="number" id="precoLeite" step="0.01" value="4.00" onchange="calcularTotal()"></td>
+                <td><input type="number" id="quantidadeLeite" value="1" onchange="calcularTotal()"></td>
+                <td><span id="totalLeite">4.00</span></td>
+            </tr>
+            </tr>
+
+            <tr>
+                <tr bgcolor="green">
+                <td>Torrada</td>
+                <td><input type="number" id="precoTorrada" step="0.01" value="3.60" onchange="calcularTotal()"></td>
+                <td><input type="number" id="quantidadeTorrada" value="1" onchange="calcularTotal()"></td>
+                <td><span id="totalTorrada">4.00</span></td>
+                </tr>
+            </tr>
+
+            <tr>
+                <tr bgcolor="green">
+                <td>Carne de porco</td>
+                <td><input type="number" id="precoPorco" step="0.01" value="24.98" onchange="calcularTotal()"></td>
+                <td><input type="number" id="quantidadePorco" value="1" onchange="calcularTotal()"></td>
+                <td><span id="totalPorco">4.00</span></td>
+            </tr>
+            </tr>
+
+            <tr>
+                <tr bgcolor="green">
+                <td>Granola</td>
+                <td><input type="number" id="precoGranola" step="0.01" value="5.00" onchange="calcularTotal()"></td>
+                <td><input type="number" id="quantidadeGranola" value="1" onchange="calcularTotal()"></td>
+                <td><span id="totalGranola">4.00</span></td>
+            </tr>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+    </table>
+
+    <h2 align="center">Total à Vista: R$ <span id="totalAVista">6.00</span></h2>
+
+    <script>
+        function calcularTotal() {
+            const precoPao = parseFloat(document.getElementById('precoPao').value);
+            const quantidadePao = parseInt(document.getElementById('quantidadePao').value);
+            const totalPao = precoPao * quantidadePao;
+            document.getElementById('totalPao').textContent = totalPao.toFixed(2);
+
+            const precoLeite = parseFloat(document.getElementById('precoLeite').value);
+            const quantidadeLeite = parseInt(document.getElementById('quantidadeLeite').value);
+            const totalLeite = precoLeite * quantidadeLeite;
+            document.getElementById('totalLeite').textContent = totalLeite.toFixed(2);
+
+            const precoTorrada = parseFloat(document.getElementById('precoTorrada').value);
+            const quantidadeTorrada = parseInt(document.getElementById('quantidadeTorrada').value);
+            const totalTorrada = precoTorrada * quantidadeTorrada;
+            document.getElementById('totalTorrada').textContent = totalTorrada.toFixed(2);
+
+            const precoPorco = parseFloat(document.getElementById('precoPorco').value);
+            const quantidadePorco = parseInt(document.getElementById('quantidadePorco').value);
+            const totalPorco = precoPorco * quantidadePorco;
+            document.getElementById('totalPorco').textContent = totalPorco.toFixed(2);
+
+            const precoGranola = parseFloat(document.getElementById('precoGranola').value);
+            const quantidadeGranola = parseInt(document.getElementById('quantidadeGranola').value);
+            const totalGranola = precoGranola * quantidadeGranola;
+            document.getElementById('totalGranola').textContent = totalGranola.toFixed(2);
+
+            // Calcule o total à vista somando todos os itens
+            const totalAVista = totalPao + totalLeite + totalTorrada +totalPorco + totalGranola; // Adicione mais itens conforme necessário
+
+            document.getElementById('totalAVista').textContent = totalAVista.toFixed(2);
+        }
+
+        // Chame a função para calcular o total inicial
+        calcularTotal();
+    </script>
+</body>
+</html>
