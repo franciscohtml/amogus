@@ -1,1 +1,1 @@
-<a href="https://franciscohtml.github.io/amogus/"> OI </a>
+<a href="https://franciscohtml.github.io/amogus/index2.html"> OI </a>
